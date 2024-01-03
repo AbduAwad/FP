@@ -1,0 +1,22 @@
+<!-- homePage.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form action="/homePage" method="post">
+            <input type="text" id="city" placeholder="Search.." name="search" required>
+            <button type="submit">Search</button>
+        </form>
+        <div class="weather-info">
+            <p><strong>Weather Data:</strong> <%= weatherData.weather %></p>
+        </div>
+    </div>
+</body>
+</html>

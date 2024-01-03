@@ -1,0 +1,27 @@
+<!-- users.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <form action="/users" method="get">
+        <h1>User List</h1>
+        <% for (let i = 0 ; i < userDataArr.length; i++) { %>
+            <div>
+                <p><strong>Username:</strong> <%= userDataArr[i].name %></p>
+                <p><strong>User ID:</strong> <%= userDataArr[i]._id %></p>
+                <p><strong>User Pass Encrypted:</strong> <%= userDataArr[i].password %></p>
+                <p><strong>Admin Privileges:</strong> <%= userDataArr[i].userPrivilege %></p>
+            </div>
+            <p class="separator">------------------------------------------------------------</p>
+        <% } %>
+    </form>
+    <form action="/homePage" method="post">
+        <button type="submit">Return to homepage</button>
+    </form>
+</body>
+</html>
